@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Signup
+{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center">Signup to Slicker</h1>
+    <form action="/signup/" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="fullname" class="form-label">Enter your full name</label>
+            <input required type="text" class="form-control" id="fullname" name="fullname" placeholder="Your full name">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Enter your email</label>
+            <input required type="email" class="form-control" id="email" name="email" placeholder="Your email">
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Select a username</label>
+            <input required type="text" class="form-control" id="username" name="username" placeholder="Select a username">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Create a password</label>
+            <input required type="password" minlength="8" class="form-control" id="password" name="password" placeholder="Create a password">
+        </div>
+        <div class="mb-3">
+            <label for="confPassword" class="form-label">Confirm password</label>
+            <input required type="password" minlength="8" class="form-control" id="confPassword" name="confPassword" placeholder="Confirm password">
+        </div>
+        <div class="mb-3">
+            <label for="year" class="form-label">Select your current year</label>
+            <select id="year" name="year" class="form-select" aria-label="Default select example">
+                <option selected>Select your current year</option>
+                <option value="1">1st</option>
+                <option value="2">2nd</option>
+                <option value="3">3rd</option>
+                <option value="4">4th</option>
+                <option value="5">Passout</option>
+              </select>
+        </div>
+        <center>
+            <button class="btn btn-primary" type="submit">Login!</button>
+        </center>
+    </form>
+</div>
+{% endblock body %}
